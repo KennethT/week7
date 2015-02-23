@@ -1,0 +1,11 @@
+<%= form_for [@user, @course] do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :day_night %>
+<%= f.check_box :day_night %>
+
+<%= f.submit %>
+
+<% end %>

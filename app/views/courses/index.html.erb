@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Day or Night (Checked if night)</th>
+  </tr>
+
+  <tbody>
+    <% @courses.each do |course|  %>
+    <tr>
+      <td><%= link_to course.title, user_course_path(@user, course) %> </td>
+      <td><%= course.day_night %></td>
+      <% if current_user %>
+      <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
+<% if current_user %>
+<td><%= link_to "Add Course", new_user_course_path(@user, @course) %></td>
+<% end %>

@@ -1,0 +1,18 @@
+<h1>Courses</h1>
+<table>
+  <tr>
+    <th> Title </th>
+    <th> Day or Night </th>
+  </tr>
+
+  <tbody>
+    <% @user.courses.each do |course| %>
+    <tr>
+      <td> <%= link_to course.title, user_course_path(@company, course) %></td>
+      <td> <%= course.day_night %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', user_path(@course.user) %>
