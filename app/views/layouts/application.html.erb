@@ -8,13 +8,7 @@
 </head>
 <body>
 
-<% if current_user %>
-    <%= current_user.username %> |
-    <%= link_to "Logout", logout_path %>
-<% else %>
-    <%= link_to "Login", signin_path %> |
-    <%= link_to "Register", new_registration_path %>
-<% end %>
+
 
 
 
