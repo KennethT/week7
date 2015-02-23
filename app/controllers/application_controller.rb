@@ -7,9 +7,9 @@ def current_user
   User.find_by_id(session[:user_id])
 end
 
-def authenticate
-  redirect_to login_path, :alert => 'You need to be logged in to see this.' if not current_user
-end
+# def authenticate
+#   redirect_to login_path, :alert => 'You need to be logged in to see this.' if not current_user
+# end
 
 helper_method :current_user
 

@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
 
-  before_action :authenticate, except: [:index, :show]
+  # before_action :authenticate, except: [:index, :show]
 
   def index
     @courses = Course.all
@@ -31,7 +31,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
-      redirect_to @courses_path, notice: 'Course was successfully created.'
+      redirect_to courses_path, notice: 'Course was successfully created.'
     else
       render:new
     end
