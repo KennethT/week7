@@ -15,9 +15,9 @@
       <% else %>
       <td>night</td>
       <% end %>
-      <!-- <% if current_user %>
-      <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }%></td>
-      <% end %> -->
+      <td><%= link_to 'Edit', edit_course_path(course) %></td>
+      <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+
     </tr>
     <% end %>
   </tbody>
