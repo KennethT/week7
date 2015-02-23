@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   validates :about, presence: true
 
   has_many :courses
-  #has_secure_password
+  has_secure_password
 end
