@@ -24,8 +24,16 @@ describe 'User can CRUD courses' do
 
     click_on "Create Course"
 
-    expect(page).to have_content("milking")
-    expect(page).to have_content("day")
+    click_on "Edit"
+
+    fill_in 'course[title]', :with => "milking1"
+    uncheck "Click on box if it is a day class"
+
+    click_on "Update Course"
+
+    expect(page).to have_content("milking1")
+    expect(page).to have_content("night")
+
   end
 
 end
