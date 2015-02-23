@@ -9,10 +9,14 @@
     <% @user.courses.each do |course| %>
     <tr>
       <td> <%= link_to course.title, user_course_path(@company, course) %></td>
-      <td> <%= course.day_night %></td>
+      <% if @course.day_night == true %>
+      <td>day</td>
+      <% else %>
+      <td>night</td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Back', user_path(@course.user) %>
+<%= link_to 'Back', user_courses %>

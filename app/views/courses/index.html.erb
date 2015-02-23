@@ -8,7 +8,11 @@
     <% @courses.each do |course|  %>
     <tr>
       <td><%= link_to course.title, user_course_path(@user, course) %> </td>
-      <td><%= course.day_night %></td>
+      <% if course.day_night == true %>
+      <td>day</td>
+      <% else %>
+      <td>night</td>
+        <% end %>
       <% if current_user %>
       <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }%></td>
       <% end %>
@@ -19,4 +23,6 @@
 </table>
 <% if current_user %>
 <td><%= link_to "Add Course", new_user_course_path(@user, @course) %></td>
+<td><%= link_to 'Edit', edit_course_path(@course) %></td>
+<td><%= link_to 'Delete', course_path(@course), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
