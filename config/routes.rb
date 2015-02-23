@@ -8,9 +8,12 @@ end
 
 resources :registrations, only: [:new, :create]
 
-get "login" => "sessions#new", as: :login
+get "login" => "sessions#new"
 post "login" => "sessions#create"
-get "logout" => "sessions#destroy", as: :logout
+get "logout" => "sessions#destroy"
+
+get 'login' => 'registration#new'
+post 'login' => 'registrations#create'
 
 
   # You can have the root of your site routed with "root"
