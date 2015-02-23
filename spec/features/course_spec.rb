@@ -36,4 +36,19 @@ describe 'User can CRUD courses' do
 
   end
 
+  scenario 'User can delete a course' do
+
+    visit('/courses/new')
+
+    fill_in 'course[title]', :with => "milking"
+    check "Click on box if it is a day class"
+
+    click_on "Create Course"
+
+    click_on "Delete"
+
+    expect(page).to have_content("Course was successfully destroyed")
+
+  end
+
 end
