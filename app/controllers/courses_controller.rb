@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
   end
 
   def create
