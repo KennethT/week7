@@ -1,4 +1,4 @@
-gem ‘rspec-rails’
+require 'rails_helper'
 
 describe 'User can CRUD users' do
 
@@ -17,7 +17,7 @@ describe 'User can CRUD users' do
 
 
     expect(page).to have_content("Cow")
-    expect(page).to have_content("Task was successfully created")
+    expect(page).to have_content("curd")
   end
 
 

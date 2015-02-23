@@ -5,10 +5,10 @@
     <th> Day or Night </th>
   </tr>
 
-  <!-- <tbody>
-    <% @user.courses.each do |course| %>
+<tbody>
+    <% @courses.each do |course| %>
     <tr>
-      <td> <%= link_to course.title, user_course_path(@company, course) %></td>
+      <td> <%= link_to course.title, course_path(course) %></td>
       <% if @course.day_night == true %>
       <td>day</td>
       <% else %>
@@ -17,6 +17,8 @@
     </tr>
     <% end %>
   </tbody>
-</table> -->
+</table>
 
-<%= link_to 'Back', user_courses %>
+<% render 'form' %>
+
+<%= link_to 'Back', courses %>

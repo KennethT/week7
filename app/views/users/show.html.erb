@@ -4,28 +4,3 @@
 Username | <%= @user.user_name %></dd>
 
 About | <%= @user.about %></dd>
-
-<!-- add user classes to user show page later -->
-<h1> Courses</h1>
-  <tr>
-    <th> Title </th>
-    <th> Day or Night </th>
-    <th> Delete </th>
-  </tr>
-
-  <tbody>
-    <% @user.courses.each do |course| %>
-    <tr>
-      <td> <%= link_to course.title, user_course_path(@user, course) %></td>
-      <td> <%= course.day_night %></td>
-      <%= link_to 'Delete', user_course, method: :delete  %>
-    </tr>
-    <% end %>
-  </tbody>
-
-</table>
-
-<% if current_user %>
-<td><%= link_to "Add Course",  new_user_course_path(@user, @course) %></td>
-<% end %>
-<%= link_to 'Back', users_path %>
