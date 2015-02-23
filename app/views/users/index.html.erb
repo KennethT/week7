@@ -1,0 +1,21 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>About</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+<!-- link to show page of users, which will include user's courses -->
+        <td><%= link_to user.user_name, user %></td>
+        <td><%= user.about %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %>
+            <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

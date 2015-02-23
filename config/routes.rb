@@ -6,6 +6,13 @@ resources :users do
   resources :courses
 end
 
+resources :registrations, only: [:new, :create]
+
+get "login" => "sessions#new", as: :login
+post "login" => "sessions#create"
+get "logout" => "sessions#destroy", as: :logout
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
